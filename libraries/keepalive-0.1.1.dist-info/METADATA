@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: keepalive
+Version: 0.1.1
+Summary: urllib keepalive support for python3
+Home-page: https://github.com/wikier/keepalive
+Author: Benjamin Woodruff
+Author-email: github@benjam.info
+Maintainer: Sergio Fernandez
+Maintainer-email: sergio@wikier.org
+License: GNU GPL
+Download-URL: https://github.com/wikier/keepalive/releases
+Keywords: python http urllib keepalive
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+
+An HTTP handler for `urllib2` that supports HTTP 1.1 and keepalive in Python 3.x.
+

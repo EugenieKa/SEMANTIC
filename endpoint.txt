@@ -1,0 +1,30 @@
+Endpoints fonctionnels
+-----------------------------------------------------------------------------------------------------------------------
+https://data.open.ac.uk/query
+https://sparql.nextprot.org/
+https://bio2rdf.org/sparql
+https://genome.microbedb.jp/sparql
+https://id.nlm.nih.gov/mesh/sparql
+https://sparql.proconsortium.org/virtuoso/sparql
+https://sparql.rhea-db.org/sparql
+http://patho.phenomebrowser.net/sparql/
+http://rdf.disgenet.org/sparql/
+
+Non-fonctionnels
+-----------------------------------------------------------------------------------------------------------------------
+http://data.odw.tw/sparql = byte html response
+https://idsm.elixir-czech.cz/sparql/ = byte html response
+http://sparql.wikipathways.org/= byte html response
+http://sparql.kpath.khaos.uma.es/ = urlopen error [WinError 10061], accès refusé
+http://sparql.kupkb.org/sparql =  urlopen error [Errno 11001]
+http://vulcan.cs.uga.edu/sparql =  urlopen error [WinError 10060], TimeOUt error
+http://www4.wiwiss.fu-berlin.de/dailymed/sparql = EndPointNotFound : check it is correct
+https://www.ebi.ac.uk/rdf/services/sparql = HTTP status code 500
+
+Délai indéterminé
+------------------------------------------------------------------------------------------------------------------------
+http://www.genome.jp/sparql/linkdb - latence indéterminée
+https://bgee.org/sparql - latence indéterminée
+https://sparql.uniprot.org/sparql - latence indéterminée
+https://sparql.orthodb.org/sparql - latence indéterminée
+

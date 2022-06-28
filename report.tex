@@ -1,0 +1,127 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+
+\begin{document}
+\title{Report on querying Sparql endpoints}
+\date{\today}
+
+\part{Sparql Endpoint : https://bio2rdf.org/sparql}
+\section{Graphs research}
+\subsection{Queries for graphs and results}
+graph all\_graphs\_included.sparql : 1 results 
+\newline
+graph graphs\_with\_rdf\_type.sparql : 38 results 
+\newline
+The graphs\_with\_rdf\_type.sparql returns more results (38)
+\subsection{List of graphs selected}
+graph 1 - http://www.openlinksw.com/schemas/virtrdf\# 
+\newline
+graph 2 - b3sifp 
+\newline
+graph 3 - http://www.w3.org/2002/07/owl\# 
+\newline
+graph 4 - disgenetv3.0 
+\newline
+graph 5 - http://www.openlinksw.com/schemas/oplweb\# 
+\newline
+graph 6 - http://bio2rdf.org/hgnc\_resource:bio2rdf.dataset.hgnc.R3 
+\newline
+graph 7 - http://bio2rdf.org/pharmgkb\_resource:bio2rdf.dataset.pharmgkb.R3 
+\newline
+graph 8 - http://bio2rdf.org/sgd\_resource:bio2rdf.dataset.sgd.R3 
+\newline
+graph 9 - http://bio2rdf.org/hp\_resource:bio2rdf.dataset.hp.R3 
+\newline
+graph 10 - http://bio2rdf.org/eco\_resource:bio2rdf.dataset.eco.R3 
+\newline
+graph 11 - http://bio2rdf.org/apo\_resource:bio2rdf.dataset.apo.R3 
+\newline
+graph 12 - http://bio2rdf.org/go\_resource:bio2rdf.dataset.go.R3 
+\newline
+graph 13 - http://bio2rdf.org/clinicaltrials\_resource:bio2rdf.dataset.clinicaltrials.R3 
+\newline
+graph 14 - http://bio2rdf.org/lsr\_resource:bio2rdf.dataset.lsr.R3 
+\newline
+graph 15 - http://bio2rdf.org/affymetrix\_resource:bio2rdf.dataset.affymetrix.R3 
+\newline
+graph 16 - http://bio2rdf.org/taxonomy\_resource:bio2rdf.dataset.taxonomy.R3 
+\newline
+graph 17 - http://bio2rdf.org/ctd\_resource:bio2rdf.dataset.ctd.R3 
+\newline
+graph 18 - http://bio2rdf.org/drugbank\_resource:bio2rdf.dataset.drugbank.R3 
+\newline
+graph 19 - http://bio2rdf.org/kegg\_resource:bio2rdf.dataset.kegg.R3 
+\newline
+graph 20 - http://bio2rdf.org/irefindex\_resource:bio2rdf.dataset.irefindex.R3 
+\newline
+graph 21 - http://bio2rdf.org/homologene\_resource:bio2rdf.dataset.homologene.R3 
+\newline
+graph 22 - http://bio2rdf.org/mgi\_resource:bio2rdf.dataset.mgi.R3 
+\newline
+graph 23 - http://bio2rdf.org/goa\_resource:bio2rdf.dataset.goa.R3 
+\newline
+graph 24 - http://bio2rdf.org/mesh\_resource:bio2rdf.dataset.mesh.R3 
+\newline
+graph 25 - http://bio2rdf.org/ncbigene\_resource:bio2rdf.dataset.ncbigene.R3 
+\newline
+graph 26 - http://bio2rdf.org/ndc\_resource:bio2rdf.dataset.ndc.R3 
+\newline
+graph 27 - http://bio2rdf.org/sider\_resource:bio2rdf.dataset.sider.R3 
+\newline
+graph 28 - http://bio2rdf.org/omim\_resource:bio2rdf.dataset.omim.R3 
+\newline
+graph 29 - http://bio2rdf.org/bioportal\_resource:bio2rdf.dataset.bioportal.R3 
+\newline
+graph 30 - http://bio2rdf.org/wormbase\_resource:bio2rdf.dataset.wormbase.R3 
+\newline
+graph 31 - http://localhost:8890/sparql 
+\newline
+graph 32 - http://bio2rdf.org/sparql 
+\newline
+graph 33 - http://bioportal.bio2rdf.org/sparql 
+\newline
+graph 34 - http://sparql.uniprot.org/ 
+\newline
+graph 35 - http://beta.sparql.uniprot.org/ 
+\newline
+graph 36 - https://query.wikidata.org/sparql 
+\newline
+graph 37 - virtrdf-label 
+\newline
+graph 38 - http://bio2rdf.org/interpro\_resource:bio2rdf.dataset.interpro.R3 
+\newline
+\newpage
+\section{Querying https://bio2rdf.org/sparql}
+\subsection{Results by query}
+Query indi\_range\_property.sparql - distinct results : 1434
+\newline
+Query indi\_domain\_property.sparql - distinct results : 8872
+\newline
+\textbf{Total of unique results found 10306 on https://bio2rdf.org/sparql 
+}\subsection{Error Log}
+\begin{itemize}
+\item Error on  query/graphs\_with\_a\_triple\_min.sparql : HTTP Error 504: Gateway Time-out\item Error on query/indi\_range\_property.sparql graph 17 http://bio2rdf.org/ctd\_resource:bio2rdf.dataset.ctd.R3 : HTTP Error 504: Gateway Time-out\item Error on query/indi\_domain\_property.sparql graph 7 http://bio2rdf.org/pharmgkb\_resource:bio2rdf.dataset.pharmgkb.R3 : HTTP Error 504: Gateway Time-out\item Error on query/indi\_domain\_property.sparql graph 17 http://bio2rdf.org/ctd\_resource:bio2rdf.dataset.ctd.R3 : HTTP Error 504: Gateway Time-out\item Error on query/indi\_domain\_property.sparql graph 25 http://bio2rdf.org/ncbigene\_resource:bio2rdf.dataset.ncbigene.R3 : HTTP Error 504: Gateway Time-out\end{itemize}
+\begin{itemize}
+\item Number of errors : 5
+\end{itemize}
+\newpage
+\section{Process before indexation}
+\subsection{JSON results conversion after distinct operation}
+All string results were converted into valid json results
+\section{Partition in separated queries}
+The volume of 10306 results does not need query partition
+\newpage
+\section{Elastic Search Indexation}
+Index 'indi\_range\_property' already exits and will be completed\newline
+Storing 1434 results in index 'indi\_range\_property' took 0.256 secs 
+\newline
+\newline
+Index 'indi\_domain\_property' already exits and will be completed\newline
+Storing 8872 results in index 'indi\_domain\_property' took 8.326 secs 
+\newline
+\newline
+\section{Getting results and indexing times}
+Getting results for https://bio2rdf.org/sparql took 10 min (642.801 secs)\newline
+Indexation for https://bio2rdf.org/sparql took 0 min (13.127 secs)\end{document}
