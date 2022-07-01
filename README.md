@@ -33,6 +33,8 @@
 
 **Main in get_index_results_{x}**
 
+**Elasticdump**
+
 -----------------------------------------------------------------------------------------
 
 "ES" will be used in the document for terms "elastic search"
@@ -60,8 +62,7 @@
 All libraries/ modules are in the Pycharm file tree under:
 > External folders > Python 3.9 > site-packages
 
-The most important libraries and built-in modules explicitly used in the
-program (and not implicitly by others API client or libraries)
+The most important libraries and built-in modules explicitly used in the program (and not implicitly by others  libraries)
 
 - SPARQLWrapper interface to send queries to SPARQL endpoints and get results
 - elasticsearch, elastic_transport, elasticsearch.helpers
@@ -75,11 +76,14 @@ program (and not implicitly by others API client or libraries)
 
 Custom modules
 - latex
+
 - elastic_meth_{x}
 
-Libraries are must be put here :
+  
 
-Windows path: C:\Users\Username\PycharmProjects\SPARQUUS\venv\Lib\site-packages
+Libraries must be here in windows path : C:\Users\Username\PycharmProjects\SPARQUUS\venv\Lib\site-packages
+
+Note that the actual directory "venv" in the deposit contains them
 
 ********************************************************************************
 # Program structure
@@ -87,11 +91,13 @@ Windows path: C:\Users\Username\PycharmProjects\SPARQUUS\venv\Lib\site-packages
 ********************************************************************************
 
 The program consists in two parts. Each one can be executed separately :
-get_index_results{x}.py and elastic_meth{x}.py
 
-This structure has been implemented in order to separate getting/indexation results from elastic search researches in database
+- get_index_results{x}.py
+- elastic_meth{x}.py
 
-Knowing that getting/indexation is long, it aims to get result in an reasonable time for ES queries
+This structure has been implemented in order to separate getting/indexation results from ES researches in database
+
+Knowing that getting/indexation results is long, it aims to get ES queries results in an reasonable time
 (also because it's nonsense to get and index sparql results each time before making any ES research)
 
 --------------------------------------------------------------------------------
@@ -112,7 +118,7 @@ elastic_meth_{x}.py contains :
 - --class Elastic_meth with ES methods, including indexation methods
 - --the program to launch ES queries
 
-Note : get_index_result{x} is calling static methods from elastic_meth{x} but it performs  getting and formatting sparql results, partitioning and ES indexation in its main().
+Note : get_index_result{x} calls static methods from elastic_meth{x} but it performs  getting and formatting sparql results, partitioning and ES indexation in its main().
 
 
 
@@ -123,9 +129,10 @@ Program versions
 ***
 
 There are 3 versions of the program, see the difference below 
-The last version used and updated is get_index_result_1
+**The last version used and updated is get_index_result_1**
 
-- get_index_result_1 :
+get_index_result_1 :
+
 - get distinct results
 - index a json array of 'value' fields
 
@@ -145,9 +152,9 @@ get_index_result_2 :
 
   - --> UNFINISHED :
 
-  - ----problem with the entity_type results which are indexed twice
+  - ----problem with the entity_type results which is indexed twice
 
-  - ----the report generation is not updated and stops after getting sparql results step
+  - ----the report generation is not updated and only does the getting sparql results step
 
 ES index ex: 
 
@@ -233,7 +240,7 @@ is document that contains all medical endpoints tested :
 
 ### directory query 
 
-contains all files .sparql which are SPARQL queries (to modify them, see section 4.3 Query functions)
+contains all files .sparql which are SPARQL queries (to modify them, see section Query functions)
 
 ### directory reports 
 
@@ -276,19 +283,19 @@ LOG FUNCTIONS (Latex report)
 
 ***
 
-Here are basically variables used for the report which are all dictionaries to store data to report
+Here are basically variables used which are all dictionaries to store data to report
 
 The report is always written in file "report.tex"
 
-Warning : each time your launch the program, it will overwritten "report.tex"
+**Warning : each time your launch the program, it will overwritten "report.tex"**
 
 
 
-The file is open and close several times at some progression steps, both in get_index_result{x} and in elastic_meth{x}
+The file is open and close several times while running, both in get_index_result{x} and in elastic_meth{x}
 
 It seems inconvenient to insert an input asking user many times the same name of file during the process (and pausing it in addition)
 
-Simply rename to save it, after a launch on an endpoint once it is produced.
+Simply rename to save it once it is produced, after a launch on an endpoint.
 
 ### Tips about latex document
 
@@ -323,8 +330,7 @@ ex :
 
 ```
 pen = open("report.tex", "a", encoding="utf-8")
-pen.write(Latex.section(Latex.format_special_char("Querying endpoint
-													https://bio2rdf.org/sparql")
+pen.write(Latex.section(Latex.format_special_char("Querying endpoint : https://bio2rdf.org/sparql")
 pen.write(Latex.format_special_char("entity_type_44#trick.sparql"))
 pen.write(Latex.newline())
 pen.write("Hello World")
@@ -342,17 +348,17 @@ QUERY FUNCTIONS
 
 ***
 
-- Function setting_query() creates a Query object and configures it to prepare/modify the file .sparql to be sent, with needed paramaters
+- Function setting_query() creates a Query object and configures it to prepare/modify the file .sparql to be sent
 - Function setting_sparql() creates a SparqlWrapper object and configure it through SparqlWrapper methods before sending it to the server
 - Function launch_query() basically send the sparql query and convert its response into json results
-  - In this function, Query object is the sparql query plus others attributes that is set
+  - In this function, Query object is the sparql query plus others set attributes
   - Short after the SparqlWrapper object use some of this Query object attributes and its own parameters to send the fitting sparql query to the server
   - Note that, this functions contains a big part of exceptions and errors management
 
 
 ### Exceptions
 
-Exceptions are treated separately in order to format them properly in order to include them in the report.tex
+Exceptions are treated separately to format them properly in order to include them in the report.tex
 
 There were particular ways to store data about exceptions, for e.g :
 
@@ -369,7 +375,7 @@ RESULTS FUNCTIONS
 
 display_results() : displays results in the terminal (useful to observe json result structure and syntax)
 
-- It displays dictionary json results only
+- It displays a dictionary but the json results only
 
 - It can display any list on the program (optionnal)
 
@@ -377,7 +383,7 @@ count_results() : counts number of results in json results dictionary
 
 
 
-Displaying results for a sparql query on endpoint is deactivated (uncommented) because of the long length of json results
+It is deactivated sparql queries on endpoint (uncommented) because of the long length of json results
 
 It is activated to find graphs in endpoint
 
@@ -388,15 +394,20 @@ GRAPH FUNCTIONS
 ***
 
 extract_graph() :  aims to extract the list of graphs from and endpoint.
-This function is composed of two others functions :
-
-- graphset_with_more_results() : aims to determine within the three sparql query of getting graphs which one got the most result
-
-- listing_graph(): creates list of graphs from the sparql graph query that got most results
 
 Graphset notion : a graph set is a tuple containing results number, query name, and its json results
 
 It is produced when a sparql graph query search graphs in an endpoint
+
+
+
+This function is composed of two others functions :
+
+- graphset_with_more_results() : aims to determine within the three sparql graph queries which one got the most result
+
+- listing_graph(): creates list of graphs from the sparql graph query that got most results
+
+
 
 ********************************************************************************
 # ES Indexation
@@ -412,18 +423,11 @@ extracting_values_from_result():
 
 In get_index_result_1.py and in get_index_result_2.py : extracts values from a json result and puts them in a list
 
-In get_index_result_3.py : extracts fields 'value' and its type (ex: class, property,
-individual, label and so on) from a json result and create a new compact json result
+In get_index_result_3.py : extracts fields 'value' and its type (ex: class, property, individual, label and so on) from a json result and create a new compact json result
 
-indexing_elastic_search(): launches indexation and check if partitions are needed according to values size
+indexing_elastic_search() : launches indexation and check if partitions are needed according to values size
 
-indexing_by_partition(): executes the partitioning selected by the function beforehand and proceed to indexation
-
-Note that, these partitions are subpartitions split in 3 groups
-
-- under 200 000, indexation with no partition
-- between 200 000 and 1 500 000
-- superior to 1 500 00
+indexing_by_partition() : executes subpartitioning selected by the function beforehand and proceed to indexation
 
 
 
@@ -435,7 +439,9 @@ How partitioning works
 
 There are two levels of partitions : partitioning and 'subpartitioning'
 
-The partitioning execute itself in the main program
+### Partitioning
+
+Partitioning execute itself in the main program of get_and_index_result_{x}
 
 It splits results of a big query into several independent queries with the same name plus a number
 
@@ -445,19 +451,25 @@ They are treated for indexation as different queries : it permits to unload data
 
 Partitions are slices of the big results counting 2 000 000 results or more
 
-At the last final point of indexation, the  independent split queries loose their number to be the indexed under the original name of query, which is also name of index.
+During last step of indexation, the split queries loose their number to be the indexed under the original name of query, which is also name of index.
+
+### Subpartitioning
+
+Volume under 2 000 000, are either index directly, or concerned by subpartitions
+
+Subpartitioning doesn't create independent queries from the original one
+
+Query results are sliced and send for indexation part by part. 
+
+It permits for average volumes to be index by smaller parts and  aims to keep a good pace for indexation without Connection Time Out that can occurs 
 
 
 
-Volume under 2 000 000, are either index directly, or concerned by subpartitions process above mentioned
+Note that, these partitions are subpartitions split in 3 groups
 
-As seen in the previous section, there are subpartitions. It permits for average volumes to be index by smaller parts
-
-Subpartitioning doesn't create independent queries from the original one. 
-
-The query results are slices and send for indexation part by part. 
-
-It aims to keep a good pace for indexation without Connection Time Out that can occurs 
+- under 200 000, indexation with no partition
+- between 200 000 and 1 500 000
+- superior to 1 500 00
 
 
 
@@ -467,9 +479,11 @@ About Connection Time Out - err Raise None
 
 ***
 
-With all the dispositions made, it happens rarely. If it happens, just relaunch the program after a few seconds or minutes. 
+With all the dispositions made, it happens rarely. 
 
-It can be useful too to shutdown and restart ES (or simply work with a more powerful PC)
+If it happens, just relaunch the program after a few seconds or minutes. 
+
+It also can be useful to shutdown and restart ES (or simply work with a more powerful PC)
 
 
 
@@ -492,16 +506,40 @@ If there is a need of accessing independently each value of the values field for
 
 ********************************************************************************
 
-It contains list of endpoints interrogated
+It contains list of endpoints interrogated, list of graph queries, list of sparql queries
 
-It contains list of graph queries
-
-It contains list of sparql queries
-
-
-
-The program gives results for the selected endpoint by its number. 
+The program gives results for the selected endpoint with its list rank number
 
 There is no loop to querying all endpoints and indexing their results in one shot due to the fact that one crash is killing all the previous efforts, sometimes at the very end
 
-Note that partitioning in partition (not subpatitioning) is executed in it.
+Note that, partitioning (not subpartitioning) is executed in it.
+
+***
+
+# Elasticdump
+
+***
+
+### Install elasticdump on windows
+
+Elasticdump can be installed on Windows with git bash and after modifications to this 4 files in "nodejs" directory :
+
+- npm
+- npm.cmd
+- npx
+- npx.cmd
+
+The modification consists to replace "-g" parameter which is deprecated  by "--location=global" parameter
+
+### Where is the elasticdump of SEMANTIC ?
+
+Elasticdump works well locally but due to GitHub file size limitations, it can be pushed in a basic way. See the capture below :
+
+<img src="C:\Users\Heaven\PycharmProjects\SEMANTIC\git_push_elasticdump.PNG" />
+
+
+
+
+
+
+
