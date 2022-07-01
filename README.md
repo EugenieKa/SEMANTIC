@@ -533,9 +533,11 @@ The modification consists to replace "-g" parameter which is deprecated  by "--l
 
 ### Where is the elasticdump of SEMANTIC ?
 
-Elasticdump works well locally but due to GitHub file size limitations, it can be pushed in a basic way. See the capture below :
+Elasticdump works well locally but due to GitHub file size limitations, it can be pushed in a basic way.
 
-<img src="C:\Users\Heaven\PycharmProjects\SEMANTIC\git_push_elasticdump.PNG" />
+See the capture "git_push_elasticdump.PNG" 
+
+
 
 
 
