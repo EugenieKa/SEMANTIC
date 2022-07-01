@@ -35,6 +35,12 @@
 
 **Elasticdump**
 
+- With git
+- With git lfs
+- About NDJSON
+- Index by index dump
+- Multiple indexes dump
+
 -----------------------------------------------------------------------------------------
 
 "ES" will be used in the document for terms "elastic search"
@@ -520,7 +526,7 @@ Note that, partitioning (not subpartitioning) is executed in it.
 
 ***
 
-### Install elasticdump on windows
+## Install elasticdump on windows
 
 Elasticdump can be installed on Windows with git bash and after modifications to this 4 files in "nodejs" directory :
 
@@ -531,11 +537,63 @@ Elasticdump can be installed on Windows with git bash and after modifications to
 
 The modification consists to replace "-g" parameter which is deprecated  by "--location=global" parameter
 
-### Where is the elasticdump of SEMANTIC ?
+## SEMANTIC elasticdump 
+
+### With git
 
 Elasticdump works well locally but due to GitHub file size limitations, it can be pushed in a basic way.
 
-See the capture "git_push_elasticdump.PNG" 
+See the capture "git_push_elasticdump.PNG". 
+
+### With git lfs
+
+To solve the problem, we :
+
+- installed Git LFS which permits to push big volumes, as LFS objects
+- put elasticdump data files with extension ".ndjson" and configure Git LFS to target this extension
+
+Update : after few hours of loading, pushing semantic elasticdump didn't finish due to the git repository limitation
+
+See the capture "git_lfs_push_elasticdump.PNG" 
+
+### About NDJSON
+
+*This part can't be used due to git limitations for elasticdump*
+
+Elasticsearch also works with ".ndjson", that's why the result of elasticdump are files with no extension, but a NDJSON structure
+
+So,  extension change was needed for Git LFS to target the big size files, in this case : the ".ndjson" ones
+
+The extension can be changed back to no extension if needed, for ES data load 
+
+### Index by index dump
+
+*This part can't be used due to git limitations for elasticdump*
+
+SEMANTIC elasticdump currently contains data stored index by index
+
+Information in settings and mappings are not included
+
+It is important to keep in mind that Elasticsearch do not accept modifications of index settings and mappings after its creation or any loaded data. This must be think and configure ahead.
+
+In the program, a function can be used, located in elastic_meth_{x} : config_and_create_index(index_name)
+
+### Multiple indexes dump
+
+*This part can't be used due to git limitations for elasticdump*
+
+Allows to :
+
+- make a multiple dump of all indexes
+- potentially include settings (tokenizer and filter)
+
+Currently, not tested
+
+
+
+
+
+
 
 
 
