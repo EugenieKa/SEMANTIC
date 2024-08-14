@@ -351,5 +351,3 @@ query = {"regexp": {"values": ".*(aids|Aids).*"}}
 print("Displays results about AIDS : ")
 Elastic_meth.search(all_index, query)"""
 
-# comment to activate or uncomment to deactivate
-# main()
