@@ -7,7 +7,7 @@
   Organization and its members involved:
   LORIA - Laboratoire LOrrain de Recherche en Informatique et ses Applications (France) -- Team K :
   * Mathieu d'Aquin <mathieu.daquin@loria.fr>
-  * Emmanuel Nauer <emmanuel.Nauer@loria.fr>
+  * Emmanuel Nauer <emmanuel.nauer@loria.fr>
 
   :purpose:
   * SEMANTIC project is pythom program that allows its users to make research on semantic web.
