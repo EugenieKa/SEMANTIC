@@ -13,8 +13,7 @@
   * SEMANTIC project is pythom program that allows its users to make research on semantic web.
   It connects to any SPARQL endpoints, then extracts, sort and compile data in nosql database, and open
   possibility to launch researches upon them
-  for every .py files, please refers to readme file because they are 3 versions of it for
-  each function ( extract, search)
+  for every .py files, please refers to readme file because they are 3 versions
 
   :license: without license, the default copyright laws apply.
 
