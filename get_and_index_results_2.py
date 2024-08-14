@@ -4,7 +4,7 @@
 
   Author:
   * Eugenie Karadjoff
-  <eugenie.karadjoff@gmail.com> -- it will change in the near future, but works properly right now
+  <eugenie.karadjoff@free.fr> -- it will change in the near future, but works properly right now
 
   Organization and its members involved:
   LORIA - Laboratoire LOrrain de Recherche en Informatique et ses Applications (France) -- Team K :

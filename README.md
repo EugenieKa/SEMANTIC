@@ -11,7 +11,7 @@ Team K :
 
 # Author
 
-- Eugénie Karadjoff - <eugenie.karadjoff@gmail.com>  
+- Eugénie Karadjoff - <eugenie.karadjoff@free.fr>  
 
   *(mail will change in the near future)*
 
