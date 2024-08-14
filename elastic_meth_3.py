@@ -231,5 +231,4 @@ def main():
     all_index = ["class", "property", "label_class", "label_property", "subclass", "subproperty", "property_domain",
                  "property_range", "indi_range_property", "indi_domain_property", "entity_type"]
 
-# comment to deactivate or uncomment to activate
-# main()
+
