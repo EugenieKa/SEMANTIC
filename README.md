@@ -1,5 +1,20 @@
 ***
 
+# Organization and its members involved:
+
+#### LORIA - Laboratoire LOrrain de Recherche en Informatique et ses Applications (France) 
+
+Team K :
+
+- Mathieu d'Aquin - <mathieu.daquin@loria.fr>
+- Emmanuel Nauer - <emmanuel.Nauer@loria.fr>
+
+# Author
+
+- Eugénie Karadjoff - <eugenie.karadjoff@gmail.com>  
+
+  *(mail will change in the near future)*
+
 # INDEX
 
 ***
@@ -41,6 +56,8 @@
 - Index by index dump
 - Multiple indexes dump
 
+
+
 -----------------------------------------------------------------------------------------
 
 "ES" will be used in the document for terms "elastic search"
@@ -68,7 +85,8 @@
 All libraries/ modules are in the Pycharm file tree under:
 > External folders > Python 3.9 > site-packages
 
-The most important libraries and built-in modules explicitly used in the program (and not implicitly by others  libraries)
+The most important libraries and built-in modules explicitly used in the program (and not implicitly 
+by others libraries)
 
 - SPARQLWrapper interface to send queries to SPARQL endpoints and get results
 - elasticsearch, elastic_transport, elasticsearch.helpers
@@ -85,11 +103,9 @@ Custom modules
 
 - elastic_meth_{x}
 
-  
+> Libraries must be here in windows path : C:\Users\USERNAME\PycharmProjects\SEMANTIC\venv\Lib\site-packages
 
-Libraries must be here in windows path : C:\Users\Username\PycharmProjects\SPARQUUS\venv\Lib\site-packages
-
-Note that the actual directory "venv" in the deposit contains them
+> Note that the actual directory "venv" in the deposit contains them
 
 ********************************************************************************
 # Program structure
@@ -215,9 +231,6 @@ elastic_meth_3 is imported in get_index_result_3 by default
 - To execute get_index_results{x}, main() function of elastic_meth_{x}.py must be a comment
 
 - To execute elastic_meth{x}, you have to uncomment its main() function
-
-
-
 
 
 --------------------------------------------------------------------------------

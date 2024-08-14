@@ -1,4 +1,29 @@
 # -*- coding: utf-8 -*-
+
+"""
+
+  Author:
+  * Eugenie Karadjoff
+  <eugenie.karadjoff@gmail.com> -- it will change in the near future, but works properly right now
+
+  Organization and its members involved:
+  LORIA - Laboratoire LOrrain de Recherche en Informatique et ses Applications (France) -- Team K :
+  * Mathieu d'Aquin <mathieu.daquin@loria.fr>
+  * Emmanuel Nauer <emmanuel.Nauer@loria.fr>
+
+  :purpose:
+  * SEMANTIC project is pythom program that allows its users to make research on semantic web.
+  It connects to any SPARQL endpoints, then extracts, sort and compile data in nosql database, and open
+  possibility to launch researches upon them
+  for every .py files, please refers to readme file because they are 3 versions of it for
+  each function (extract, search)
+
+  :license: without license, the default copyright laws apply.
+
+  last update : July 2022
+
+"""
+
 import json
 import math
 import time
